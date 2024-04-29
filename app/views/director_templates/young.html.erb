@@ -1,0 +1,7 @@
+<h1>Youngest director</h1>
+
+<% directors = Director.all.order({ :dob => :desc})%>
+<% youngest = directors.at(0)%>
+<%= youngest.name%>
+
+<p>The youngest director in our dataset right now is <%= youngest.name%>, born on <%= youngest.dob.strftime("%B %d, %Y")%>.</p>
