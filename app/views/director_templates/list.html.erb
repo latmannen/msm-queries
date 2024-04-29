@@ -1,11 +1,6 @@
 <h1>List of directors</h1>
 
-<%= Director.all.each do |a_director| %>
-  <li>
-    <%= a_director.name%> (<%= a_director.dob %>)
-  </li>
 
-<% end %>
 
 <table border="1">
   <tr>
@@ -13,5 +8,21 @@
     <th>Image</th>
     <th>Name</th>
     <th>DOB</th>
+    <th></th>
   </tr>
+
+<% Director.all.each do |a_director| %>
+  <tr>
+    <td><%= a_director.id %></td>
+    <td>
+      <img src="<%= a_director.image %>" width="100">
+    </td>
+    <td><%= a_director.name %></td>
+    <td><%= a_director.dob %></td>
+    <td>
+      <a href="/directors/<%= a_director.id %>">Show Details</td>
+  </tr>
+<% end %>
+
+
 </table>
